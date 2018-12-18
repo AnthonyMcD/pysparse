@@ -23,8 +23,8 @@ try:
     import setuptools  # If you want to enable 'python setup.py develop'
     #pass
 except:
-    print 'setuptools module not found.'
-    print "Install setuptools if you want to enable 'python setup.py develop'."
+    print('setuptools module not found.')
+    print("Install setuptools if you want to enable 'python setup.py develop'.")
 
 require('numpy>=1.2')
 
