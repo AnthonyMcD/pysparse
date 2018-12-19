@@ -10,12 +10,12 @@ def getoption(config, section, option):
 def configuration(parent_package='',top_path=None):
     import numpy
     import os
-    import ConfigParser
+    import configparser
     from numpy.distutils.misc_util import Configuration
     from numpy.distutils.system_info import get_info, NotFoundError
 
     # Read relevant PySparse-specific configuration options.
-    pysparse_config = ConfigParser.SafeConfigParser()
+    pysparse_config = configparser.SafeConfigParser()
     pysparse_config.read(os.path.join(top_path, 'site.cfg'))
     dflt_lib_dirs = getoption( pysparse_config, 'DEFAULT', 'library_dirs')
     if dflt_lib_dirs is None:

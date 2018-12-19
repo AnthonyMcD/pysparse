@@ -3,7 +3,7 @@
 def configuration(parent_package='',top_path=None):
     import numpy
     import os
-    import ConfigParser
+    import configparser
     from numpy.distutils.misc_util import Configuration
     from numpy.distutils.system_info import get_info, NotFoundError
 

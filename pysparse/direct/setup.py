@@ -13,12 +13,12 @@ def configuration(parent_package='',top_path=None):
     import fnmatch
     import os
     import sys
-    import ConfigParser
+    import configparser
     from numpy.distutils.misc_util import Configuration
     from numpy.distutils.system_info import get_info, NotFoundError
 
     # Read relevant PySparse-specific configuration options.
-    pysparse_config = ConfigParser.SafeConfigParser()
+    pysparse_config = configparser.SafeConfigParser()
     pysparse_config.read(os.path.join(top_path, 'site.cfg'))
 
     suitesparse_include = getoption(pysparse_config, 'UMFPACK', 'suitesparse_include')
