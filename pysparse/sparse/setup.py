@@ -20,8 +20,8 @@ def configuration(parent_package='',top_path=None):
     if not blas_info:
         blas_info = get_info('blas',0)
         if not blas_info:
-            print 'No blas info found'
-    print 'Sparse:: Using BLAS info:' ; print blas_info
+            print('No blas info found')
+    print('Sparse:: Using BLAS info:'); print(blas_info)
 
     spmatrix_src = ['spmatrixmodule.c']
     config.add_extension(

@@ -24,8 +24,8 @@ def configuration(parent_package='',top_path=None):
     if dflt_libs is None:
         dflt_libs = []
 
-    print 'Using dflt_lib_dirs = ', dflt_lib_dirs
-    print 'Using dflt_libs = ', dflt_libs
+    print('Using dflt_lib_dirs = '); print(dflt_lib_dirs)
+    print('Using dflt_libs = '); print(dflt_libs)
 
     config = Configuration('eigen', parent_package, top_path)
 
@@ -34,16 +34,16 @@ def configuration(parent_package='',top_path=None):
     if not blas_info:
         blas_info = get_info('blas',0)
         if not blas_info:
-            print 'No blas info found'
-    print 'Eigen:: Using BLAS info:' ; print blas_info
+            print('No blas info found')
+    print('Eigen:: Using BLAS info:'); print(blas_info)
 
     # Get LAPACK info from site.cfg
     lapack_info = get_info('lapack_opt',0)
     if not lapack_info:
         lapack_info = get_info('lapack',0)
         if not lapack_info:
-            print 'No lapack info found'
-    print 'Eigen:: Using LAPACK info:' ; print lapack_info
+            print('No lapack info found')
+    print('Eigen:: Using LAPACK info:'); print(lapack_info)
 
     jdsym_src = ['jdsymmodule.c']
     config.add_extension(

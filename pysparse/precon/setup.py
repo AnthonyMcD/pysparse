@@ -17,7 +17,7 @@ def configuration(parent_package='',top_path=None):
     # Get BLAS info from site.cfg
     blas_info = get_info('blas_opt',0)
     if not blas_info:
-        print 'No blas info found'
+        print('No blas info found')
 
     precon_src = ['preconmodule.c']
     config.add_extension(

@@ -45,7 +45,10 @@ class ItSolver:
         self.lastIterations = iter
         self.lastInfo = info
         if self.debug:
-            print 'iterative solver returned:', info, iter, relres
+            print('iterative solver returned:')
+            print(info)
+            print(iter)
+            print(relres)
         if info < 0:
             raise RuntimeError, ('iterative solver %s returned error code %d' % (self.__class__.__name__, info), info, iter, relres)
 
@@ -171,9 +174,9 @@ if __name__ == '__main__':
     for Solver in [Pcg, Minres, Cgs, Qmrs, Gmres, Bicgstab]:
         solver = Solver(A)
         solver.solve(b, x, 1.0e-6, 3*n)
-        print fmt % (solver.name, resid(A, b, x), solver.nofCalled,
-                     solver.totalIterations)
+        print('{0} {1} {2} {3}'.format(solver.name, resid(A, b, x), solver.nofCalled,
+                     solver.totalIterations))
         solver.solve(b, x, 1.0e-6, 3*n, K)
-        print fmt % (solver.name, resid(A, b, x), solver.nofCalled,
-                     solver.totalIterations)
+        print('{0} {1} {2} {3}'.format(solver.name, resid(A, b, x), solver.nofCalled,
+                     solver.totalIterations))
 
